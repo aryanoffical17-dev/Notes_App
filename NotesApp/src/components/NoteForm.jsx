@@ -1,17 +1,22 @@
 import React, { useState } from 'react'
 
-function NoteForm() {
+function NoteForm({onAddNote}) {
     const[title , setTitle] = useState("")
     const[description,setDescription] = useState("")
 
-    const handdleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(title,description   )
+        onAddNote({
+          title:title,
+          description: description
+        })
+        setTitle("")
+        setDescription("")
     } 
     
   return (
     
-    <form className='flex flex-col gap-5 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm   ' onSubmit={handdleSubmit} >
+    <form className='flex flex-col gap-5 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm   ' onSubmit={handleSubmit} >
 
       <div>
      

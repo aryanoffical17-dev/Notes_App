@@ -1,23 +1,23 @@
 import React from 'react'
 
-function NoteCard() {
+function NoteCard({title,description}) {
 
     const date = new Date();
 
   return (
 
-    <article className='rounded-2xl p-5 border bg-white max-w-sm shadow-sm w-full'>
+    <article className='rounded-2xl p-5 border bg-white shadow-sm w-full'>
 
     <div className='mb-3 flex items-start justify-between gap-3' >
 
-      <h3 className='text-lg font-bold text-gray-800 leading-6'>React Hooks</h3>
+      <h3 className='text-lg font-bold text-gray-800 leading-6'>{title}</h3>
       <button className="rounded-lg px-2 py-1 text-gray-500 hover:bg-gray-100" aria-label="More options">
             ⋮
        </button>
 
     </div>
     
-      <p className='text-sm mb-5 font-normal text-gray-600 leading-6'>Understand how useState manages changing data in React components.</p>
+      <p className='text-sm mb-5 font-normal text-gray-600 leading-6'>{description}</p>
        
         <footer className='mt-4 border-t border-gray-100 flex gap-3 pt-4 items-center justify-between'>
 
