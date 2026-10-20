@@ -5,7 +5,13 @@ function NoteForm({onAddNote}) {
     const[description,setDescription] = useState("")
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
+
+
+         if (!title.trim() && !description.trim()) {
+              return;
+            }
+            
         onAddNote({
           title:title,
           description: description
@@ -62,9 +68,10 @@ function NoteForm({onAddNote}) {
         />
       </div>
 
-      <button
+      <button          
         className='self-start rounded-xl bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-pointer'
         type='submit'
+
         
       >
         Save Note

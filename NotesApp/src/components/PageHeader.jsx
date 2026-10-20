@@ -1,6 +1,9 @@
 import React from 'react'
 
 function PageHeader() {
+
+ 
+
   return (
     <div className='flex items-center justify-between gap-4 mb-8'>
 
@@ -15,9 +18,6 @@ function PageHeader() {
         Add Notes
         
       </button>
-
-
-
 
     </div>
 
